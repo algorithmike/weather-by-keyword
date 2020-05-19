@@ -1,8 +1,9 @@
 const request = require('request')
+require('dotenv').config()
 
 const geocode = (address, callback) => {
-    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=pk.eyJ1IjoiYWxnb3JpdGhtaWtlIiwiYSI6ImNrN21scnMweDA0Zm8zbHE4bjg1dGJ5MzIifQ.yZoPy-Vb_PiX45SSdOHCBw&limit=1'
-
+    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=' + process.env.WEATHER_TOKEN + '&limit=1'
+    console.log("token: " + process.env.WEATHER_TOKEN)
     request({url, json: true}, (error, {body: data}) => {
         if (error) {
             callback('Low level error with MapBox request.', undefined);
