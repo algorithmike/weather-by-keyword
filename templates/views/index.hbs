@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="icon" href="/img/sun-logo.png" />
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <div class="main-content">
+            {{>header}}
+
+            <p>Search for the weather of a location.</p>
+            <form id="locationSearchForm">
+                <input id="locationSearchInput" placeholder="Location" />
+                <button>Search</button>
+            </form>
+
+            <p id="messageParagraph"></p>
+        </div>
+        {{>footer}}
+
+        <script src="/js/app.js"></script>
+    </body>
+</html>
